@@ -20,11 +20,23 @@ def Reitur_1_1(dir_str):
     else:
         print("Not a valid direction!")
         return False
+
+def Reitur_1_2(dir_str):
+    print("You can travel: (N)orth or (E)ast or (S)outh.")
+    direction = dir_str
+    if direction == "n" or direction == "N":
+        return True
+
+    elif direction == "e" or direction == "E":
+        return True
+
+    elif direction == "s" or direction == "S":
+        return True
+    
+    else:
+        return False
+
 """
-def Reitur_1_2():
-
-    direction = direction()
-
 def Reitur_1_3():
 
     direction = direction()
@@ -62,3 +74,5 @@ def move(func):
 
 
 move(Reitur_1_1(direction()))
+# Færa(move) í næsta reit
+move(Reitur_1_2(direction()))
