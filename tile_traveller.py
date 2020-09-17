@@ -39,7 +39,7 @@ def Reitur_1_2():
 
 def Reitur_1_3():
     # S, E
-    print("You can move (E)ast or (S)outh.")
+    print("You can travel: (E)ast or (S)outh.")
     direction = input("Direction: ")
     if direction == "E" or direction == "e":
         Reitur_2_3()
@@ -49,9 +49,10 @@ def Reitur_1_3():
 
     else:
         print("Not a valid direction!")
+        Reitur_1_3()
 
 def Reitur_2_1():
-    print("You can move (N)orth.")
+    print("You can travel: (N)orth.")
     # N
     direction = input("Direction: ")
     if direction == "N" or direction == "n":
@@ -63,7 +64,7 @@ def Reitur_2_1():
 
 
 def Reitur_2_2():
-    print("You can move (S)outh or (W)est.")
+    print("You can travel: (S)outh or (W)est.")
     # S, W
     direction = input("Direction: ")
     if direction == "S" or direction == "s":
@@ -77,7 +78,7 @@ def Reitur_2_2():
         Reitur_2_2()
 
 def Reitur_2_3():
-    print("You can move (E)ast or (W)est")
+    print("You can travel: (E)ast or (W)est.")
     # W, E
     direction = input("Direction: ")
     if direction == "W" or direction == "w":
@@ -95,7 +96,7 @@ def Reitur_3_1():
     print("Victory!")
 
 def Reitur_3_2():
-    print("You can move (N)orth or (S)outh.")
+    print("You can travel: (N)orth or (S)outh.")
     # N, S
     direction = input("Direction: ")
     if direction == "N" or direction == "n":
@@ -109,7 +110,7 @@ def Reitur_3_2():
         Reitur_3_2()
 
 def Reitur_3_3():
-    print("You can move (S)outh or (W)est.")
+    print("You can travel: (S)outh or (W)est.")
     # W, S
     direction = input("Direction: ")
     if direction == "W" or direction == "w":
