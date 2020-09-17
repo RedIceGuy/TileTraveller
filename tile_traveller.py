@@ -2,92 +2,124 @@
 # https://github.com/RedIceGuy/TileTraveller
 
 # Algorithm
-# 1. Skapa reitina (1,1; 1,2...) 
+# 1. Skapa reitina (1.1; 1.2...) 
 # 2. Slá inn átt
 # 3. Gá hvort það sé veggur
 # 4. Halda áfram ef enginn veggur
 # 5. Reyna aftur ef það er veggur
-
-def direction():
-    direction = input("Direction: ")
-    return direction
+# 6. Stoppa þegar leikmaður kemst í reit 3_1
 
 def Reitur_1_1():
     print("You can travel: (N)orth.")
     direction = input("Direction: ")
     if direction == "n" or direction == "N":
-        return direction
+        Reitur_1_2()
+
     else:
         print("Not a valid direction!")
-        return False
+        Reitur_1_1()
 
 def Reitur_1_2():
+    # N, S, E
     print("You can travel: (N)orth or (E)ast or (S)outh.")
     direction = input("Direction: ")
     if direction == "n" or direction == "N":
-        return direction
+        Reitur_1_3()
 
     elif direction == "e" or direction == "E":
-        return direction
+        Reitur_2_2()
 
     elif direction == "s" or direction == "S":
-        return direction
+        Reitur_1_1()
     
     else:
-        print("Invalid direction")
+        print("Not a valid direction!")
         Reitur_1_2()
 
 
 def Reitur_1_3():
+    # S, E
     print("You can move (E)ast or (S)outh.")
     direction = input("Direction: ")
     if direction == "E" or direction == "e":
-        return direction
+        Reitur_2_3()
     
     elif direction == "S" or direction == "s":
-        return direction
+        Reitur_1_2()
 
     else:
         print("Not a valid direction!")
-        Reitur_1_3()
 
 def Reitur_2_1():
+    print("You can move (N)orth.")
+    # N
+    direction = input("Direction: ")
+    if direction == "N" or direction == "n":
+        Reitur_2_2()
+    
+    else:
+        print("Not a valid direction!")
+        Reitur_2_1()
 
-    direction = direction()
 
 def Reitur_2_2():
-
-    direction = direction()
+    print("You can move (S)outh or (W)est.")
+    # S, W
+    direction = input("Direction: ")
+    if direction == "S" or direction == "s":
+        Reitur_2_1()
+    
+    elif direction == "W" or direction == "w":
+        Reitur_1_2()
+    
+    else:
+        print("Not a valid direction!")
+        Reitur_2_2()
 
 def Reitur_2_3():
+    print("You can move (E)ast or (W)est")
+    # W, E
+    direction = input("Direction: ")
+    if direction == "W" or direction == "w":
+        Reitur_1_3()
+    
+    elif direction == "E" or direction == "e":
+        Reitur_3_3()
 
-    direction = direction()
+    else:
+        print("Not a valid direction!")
+        Reitur_2_3()
 
 def Reitur_3_1():
     # Victory
     print("Victory!")
 
-def Reitur_3_2(direction):
+def Reitur_3_2():
+    print("You can move (N)orth or (S)outh.")
+    # N, S
+    direction = input("Direction: ")
+    if direction == "N" or direction == "n":
+        Reitur_3_3()
+    
+    elif direction == "S" or direction == "s":
+        Reitur_3_1()
+    
+    else:
+        print("Not a valid direction!")
+        Reitur_3_2()
 
-    direction = direction()
-    if direction == "n" or direction == "N":
+def Reitur_3_3():
+    print("You can move (S)outh or (W)est.")
+    # W, S
+    direction = input("Direction: ")
+    if direction == "W" or direction == "w":
+        Reitur_2_3()
+    
+    elif direction == "S" or direction == "s":
+        Reitur_3_2()
+    
+    else:
+        print("Not a valid direction!")
+        Reitur_3_3()
 
-
-def Reitur_3_3(direction):
-
-    direction = direction()
-"""
-def move(func):
-    func
-    while not func:
-        func
-
-"""
-win = False
-
-if not Reitur_1_1():
-    Reitur_1_1()
-
-if Reitur_1_2() == "n" or Reitur_1_2() == "N":
-    Reitur_1_3
-
+Reitur_1_1()
