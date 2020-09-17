@@ -12,34 +12,44 @@ def direction():
     direction = input("Direction: ")
     return direction
 
-def Reitur_1_1(dir_str):
+def Reitur_1_1():
     print("You can travel: (N)orth.")
-    direction = dir_str
+    direction = input("Direction: ")
     if direction == "n" or direction == "N":
-        return True
+        return direction
     else:
         print("Not a valid direction!")
         return False
 
-def Reitur_1_2(dir_str):
+def Reitur_1_2():
     print("You can travel: (N)orth or (E)ast or (S)outh.")
-    direction = dir_str
+    direction = input("Direction: ")
     if direction == "n" or direction == "N":
-        return True
+        return direction
 
     elif direction == "e" or direction == "E":
-        return True
+        return direction
 
     elif direction == "s" or direction == "S":
-        return True
+        return direction
     
     else:
-        return False
+        print("Invalid direction")
+        Reitur_1_2()
 
-"""
+
 def Reitur_1_3():
+    print("You can move (E)ast or (S)outh.")
+    direction = input("Direction: ")
+    if direction == "E" or direction == "e":
+        return direction
+    
+    elif direction == "S" or direction == "s":
+        return direction
 
-    direction = direction()
+    else:
+        print("Not a valid direction!")
+        Reitur_1_3()
 
 def Reitur_2_1():
 
@@ -72,7 +82,12 @@ def move(func):
     while not func:
         func
 
+"""
+win = False
 
-move(Reitur_1_1(direction()))
-# Færa(move) í næsta reit
-move(Reitur_1_2(direction()))
+if not Reitur_1_1():
+    Reitur_1_1()
+
+if Reitur_1_2() == "n" or Reitur_1_2() == "N":
+    Reitur_1_3
+
